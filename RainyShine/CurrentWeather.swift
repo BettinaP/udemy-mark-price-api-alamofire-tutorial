@@ -55,4 +55,9 @@ class CurrentWeather {
     }
     
     
+    func downloadWeatherDetails(completed: DownloadComplete) {
+        // telling Alamofire where to download from
+        
+        let currentWeatherURL = URL(string: currentWeather_URL)
+    }
 }

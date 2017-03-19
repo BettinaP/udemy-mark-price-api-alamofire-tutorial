@@ -14,4 +14,7 @@ let lon = "&lon="
 let appID = "&appid="
 let apiKey = "ac32b168d8e184796ebca6a2f5ee8ee2"
 
-let currentWeatherURL = "\(baseURL)\(lat)40.71\(lon)-74.01\(appID)\(apiKey)" 
+typealias DownloadComplete = () -> () // telling our function when we're complete and is a closure 
+
+let currentWeather_URL = "\(baseURL)\(lat)40.71\(lon)-74.01\(appID)\(apiKey)"
+
