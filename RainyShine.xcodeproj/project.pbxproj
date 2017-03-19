@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DEE7A35B1E7E331100C2CEDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7A35A1E7E331100C2CEDC /* AppDelegate.swift */; };
-		DEE7A35D1E7E331100C2CEDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7A35C1E7E331100C2CEDC /* ViewController.swift */; };
+		DEE7A35D1E7E331100C2CEDC /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7A35C1E7E331100C2CEDC /* WeatherVC.swift */; };
 		DEE7A3601E7E331100C2CEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE7A35E1E7E331100C2CEDC /* Main.storyboard */; };
 		DEE7A3621E7E331100C2CEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE7A3611E7E331100C2CEDC /* Assets.xcassets */; };
 		DEE7A3651E7E331100C2CEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE7A3631E7E331100C2CEDC /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		B128D80F582F72295D55F9D8 /* Pods-RainyShine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyShine.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainyShine/Pods-RainyShine.release.xcconfig"; sourceTree = "<group>"; };
 		DEE7A3571E7E331100C2CEDC /* RainyShine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainyShine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE7A35A1E7E331100C2CEDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DEE7A35C1E7E331100C2CEDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEE7A35C1E7E331100C2CEDC /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		DEE7A35F1E7E331100C2CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEE7A3611E7E331100C2CEDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEE7A3641E7E331100C2CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE7A35A1E7E331100C2CEDC /* AppDelegate.swift */,
-				DEE7A35C1E7E331100C2CEDC /* ViewController.swift */,
+				DEE7A35C1E7E331100C2CEDC /* WeatherVC.swift */,
 				DEE7A35E1E7E331100C2CEDC /* Main.storyboard */,
 				DEE7A3611E7E331100C2CEDC /* Assets.xcassets */,
 				DEE7A3631E7E331100C2CEDC /* LaunchScreen.storyboard */,
@@ -123,6 +123,7 @@
 				TargetAttributes = {
 					DEE7A3561E7E331100C2CEDC = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = PC6SC7E96K;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -212,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEE7A35D1E7E331100C2CEDC /* ViewController.swift in Sources */,
+				DEE7A35D1E7E331100C2CEDC /* WeatherVC.swift in Sources */,
 				DEE7A35B1E7E331100C2CEDC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +338,7 @@
 			baseConfigurationReference = 927E46A071D070AC2C9E55E3 /* Pods-RainyShine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PC6SC7E96K;
 				INFOPLIST_FILE = RainyShine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BP.RainyShine;
@@ -350,6 +352,7 @@
 			baseConfigurationReference = B128D80F582F72295D55F9D8 /* Pods-RainyShine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PC6SC7E96K;
 				INFOPLIST_FILE = RainyShine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BP.RainyShine;
