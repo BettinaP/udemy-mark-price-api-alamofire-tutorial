@@ -12,9 +12,12 @@
 		DEE7A3601E7E331100C2CEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE7A35E1E7E331100C2CEDC /* Main.storyboard */; };
 		DEE7A3621E7E331100C2CEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE7A3611E7E331100C2CEDC /* Assets.xcassets */; };
 		DEE7A3651E7E331100C2CEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE7A3631E7E331100C2CEDC /* LaunchScreen.storyboard */; };
+		EE2D341E4071805E70C36222 /* Pods_RainyShine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0AE4CD146A3322D15BCBEA /* Pods_RainyShine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		927E46A071D070AC2C9E55E3 /* Pods-RainyShine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyShine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RainyShine/Pods-RainyShine.debug.xcconfig"; sourceTree = "<group>"; };
+		B128D80F582F72295D55F9D8 /* Pods-RainyShine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyShine.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainyShine/Pods-RainyShine.release.xcconfig"; sourceTree = "<group>"; };
 		DEE7A3571E7E331100C2CEDC /* RainyShine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainyShine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE7A35A1E7E331100C2CEDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEE7A35C1E7E331100C2CEDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		DEE7A3611E7E331100C2CEDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEE7A3641E7E331100C2CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEE7A3661E7E331100C2CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD0AE4CD146A3322D15BCBEA /* Pods_RainyShine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RainyShine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2D341E4071805E70C36222 /* Pods_RainyShine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40D74F67B7092B1B445A3B95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				927E46A071D070AC2C9E55E3 /* Pods-RainyShine.debug.xcconfig */,
+				B128D80F582F72295D55F9D8 /* Pods-RainyShine.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4F4B6B982E69269EC9D72698 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD0AE4CD146A3322D15BCBEA /* Pods_RainyShine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DEE7A34E1E7E331100C2CEDC = {
 			isa = PBXGroup;
 			children = (
 				DEE7A3591E7E331100C2CEDC /* RainyShine */,
 				DEE7A3581E7E331100C2CEDC /* Products */,
+				40D74F67B7092B1B445A3B95 /* Pods */,
+				4F4B6B982E69269EC9D72698 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEE7A3691E7E331100C2CEDC /* Build configuration list for PBXNativeTarget "RainyShine" */;
 			buildPhases = (
+				8EFC7A76838FE0BCF982F291 /* [CP] Check Pods Manifest.lock */,
 				DEE7A3531E7E331100C2CEDC /* Sources */,
 				DEE7A3541E7E331100C2CEDC /* Frameworks */,
 				DEE7A3551E7E331100C2CEDC /* Resources */,
+				0FA484149D8BE2DE345A35DE /* [CP] Embed Pods Frameworks */,
+				F8080E1A6A490CC58CA6C6EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +123,7 @@
 				TargetAttributes = {
 					DEE7A3561E7E331100C2CEDC = {
 						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -130,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FA484149D8BE2DE345A35DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RainyShine/Pods-RainyShine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EFC7A76838FE0BCF982F291 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F8080E1A6A490CC58CA6C6EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RainyShine/Pods-RainyShine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DEE7A3531E7E331100C2CEDC /* Sources */ = {
@@ -258,6 +334,7 @@
 		};
 		DEE7A36A1E7E331100C2CEDC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 927E46A071D070AC2C9E55E3 /* Pods-RainyShine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RainyShine/Info.plist;
@@ -270,6 +347,7 @@
 		};
 		DEE7A36B1E7E331100C2CEDC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B128D80F582F72295D55F9D8 /* Pods-RainyShine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RainyShine/Info.plist;
@@ -299,6 +377,7 @@
 				DEE7A36B1E7E331100C2CEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
