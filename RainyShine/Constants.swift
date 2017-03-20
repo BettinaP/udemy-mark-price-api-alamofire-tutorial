@@ -19,9 +19,10 @@ let apiKey = "ac32b168d8e184796ebca6a2f5ee8ee2" //to make it safer, should have 
 
 typealias DownloadComplete = () -> () // telling our function when we're complete and is a closure
 
-let currentWeather_URL = "\(baseURL)\(weather)\(lat)40.71\(lon)-74.01\(appID)\(apiKey)"
-let dailyWeather_URL = "\(baseURL)\(forecastDaily)\(lat)40.71\(lon)-74.01\(count)10\(appID)\(apiKey)"
-// api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}
+let currentWeather_URL = "\(baseURL)\(weather)\(lat)\(Location.sharedInstance.latitude!)\(lon)\(Location.sharedInstance.longitude!)\(appID)\(apiKey)"
+let dailyWeather_URL = "\(baseURL)\(forecastDaily)\(lat)\(Location.sharedInstance.latitude!)\(lon)\(Location.sharedInstance.longitude!)\(count)10\(appID)\(apiKey)"
+
+
 
 //extension Double {
 //    mutating func kelvinToFarenheitConversion(temp: Double) -> Double {

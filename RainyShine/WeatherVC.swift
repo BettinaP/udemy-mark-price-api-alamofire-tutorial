@@ -7,21 +7,26 @@
 //
 
 import UIKit
+import CoreLocation
 import Alamofire
 
-class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
-   
+    
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var currentWeatherImage: UIImageView!
     @IBOutlet weak var currentWeatherTypeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    
     var currentWeather: CurrentWeather!
     var dailyForecast: DailyForecast!
     var forecasts = [DailyForecast]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +34,46 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        //tellling locationManager how we want it to work
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
         
         currentWeather = CurrentWeather()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // we want it to run before we download weather details
+        super.viewDidAppear(animated)
+        locationCheckAuthStatus()
         
-        //dailyForecast = DailyForecast(weatherDict:)
-        currentWeather.downloadCurrentWeatherDetails {
-            self.downloadDailyForecastDetails {
-                self.updateMainUI()
-                self.tableView.reloadData()
+    }
+    
+    func locationCheckAuthStatus() {
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            //if we're already authorized, we're accessing & saving into currentLocation
+          
+                currentLocation = locationManager.location
+                //save lat & long to singleton class
+                Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+                Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            
+                // make API call once location obtained
+                currentWeather.downloadCurrentWeatherDetails {
+                    self.downloadDailyForecastDetails {
+                        self.updateMainUI()
+                        self.tableView.reloadData()
+                    }
+                }
             }
+            
+         else {
+            locationManager.requestWhenInUseAuthorization() //if not yet authorized, upon opening very first time, notification to authorize use pops up
+            locationCheckAuthStatus() //have it call and run through again so it saves currentLocation after obtaining authorization
         }
-        
-        
     }
     
     func downloadDailyForecastDetails(completed: @escaping DownloadComplete) {
@@ -60,14 +93,14 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     }
                     self.forecasts.remove(at: 0)
                     self.tableView.reloadData()
-
+                    
                 }
             }
-         completed()
+            completed()
         }
         
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return forecasts.count
     }
@@ -83,7 +116,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return DailyWeatherCell()
     }
-
+    
     func updateMainUI() {
         dateLabel.text = currentWeather.date
         currentTempLabel.text = "\(currentWeather.currentTemp)"
@@ -91,6 +124,6 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         locationLabel.text = currentWeather.cityName
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
     }
-
+    
 }
 
