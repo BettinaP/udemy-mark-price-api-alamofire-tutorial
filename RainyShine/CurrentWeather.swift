@@ -55,7 +55,7 @@ class CurrentWeather {
     }
     
     
-    func downloadWeatherDetails(completed: @escaping DownloadComplete) {
+    func downloadCurrentWeatherDetails(completed: @escaping DownloadComplete) {
         // telling Alamofire where to download from
         
         let currentWeatherURL = URL(string: currentWeather_URL)!
@@ -78,7 +78,8 @@ class CurrentWeather {
                 
                 if let main = dictionary["main"] as? Dictionary<String, AnyObject> {
                     if let mainTemp = main["temp"] as? Double {
-                        let kelvinToFarenheitPreDiv = ((mainTemp) * (9/5) - 459.67)
+                        //self._currentTemp = self.kelvinToFarenheitConversion(temp: mainTemp)
+                        let kelvinToFarenheitPreDiv = (mainTemp * (9/5) - 459.67)
                         let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDiv/10))
                         self._currentTemp = kelvinToFarenheit
                     print(self._currentTemp)
@@ -87,7 +88,6 @@ class CurrentWeather {
             }
             completed()
         }
-        
         //removed completion handler because we already created our own closure that handles all the downloads: DownloadComplete
     }
 }
